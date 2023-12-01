@@ -1,4 +1,9 @@
-import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  ChangeDetectorRef,
+  Component,
+  Input,
+} from '@angular/core';
 
 @Component({
   selector: 'app-child',
@@ -8,4 +13,10 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 })
 export class ChildComponent {
   @Input() fruits: string[] = [];
+
+  constructor(private cdRef: ChangeDetectorRef) {}
+
+  refresh() {
+    this.cdRef.detectChanges();
+  }
 }
