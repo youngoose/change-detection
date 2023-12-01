@@ -19,7 +19,7 @@
 - returns a complete new array
 - modify parent and child component to use the OnPush change detection strategy.
 
-2. Add ChangeDetectorRef with button
+2. Add ChangeDetectorRef.detectChanges() with button
 
 > Issue
 
