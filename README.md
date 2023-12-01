@@ -6,7 +6,7 @@
 
 > Push commits with corresponding use cases
 
-1. Add OnPush on the child
+1. [Add OnPush on the child](https://github.com/youngoose/change-detection/tree/on-push)
 
 > Issue
 
@@ -19,7 +19,7 @@
 - returns a complete new array
 - modify parent and child component to use the OnPush change detection strategy.
 
-2. Add ChangeDetectorRef.detectChanges() with button
+2. [Add ChangeDetectorRef.detectChanges() with button](https://github.com/youngoose/change-detection/tree/detect-changes)
 
 > Issue
 
@@ -29,7 +29,7 @@
 
 - pressing the Refresh button will run change detection on the component
 
-3. Add ChangeDetectorRef.markForCheck()
+3. [Add ChangeDetectorRef.markForCheck()](https://github.com/youngoose/change-detection/tree/mark-for-check)
 
 > Issue
 
@@ -39,3 +39,12 @@
 > Solution
 
 - markForCheck instructs Angular that this particular input should trigger change detection when mutated
+
+## Conclusion
+
+> ChangeDetectionStrategy and ChangeDetectorRef
+
+- by default, angular will perform change detection on all components
+- ChangeDetectionStrategy and ChangeDetectorRef can be applied to components to perform change detection on new references VS when data is mutated
+
+### [Reference - digitalocean.com](https://www.digitalocean.com/community/tutorials/angular-change-detection-strategy)
