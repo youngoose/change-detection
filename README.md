@@ -18,3 +18,13 @@
 - no longer mutating the fruits array
 - returns a complete new array
 - modify parent and child component to use the OnPush change detection strategy.
+
+2. Add ChangeDetectorRef with button
+
+> Issue
+
+- append array with .push will not update the unordered list
+
+> Fix
+
+- pressing the Refresh button will run change detection on the component
