@@ -9,6 +9,6 @@ export class AppComponent {
   fruits = ['apple', 'banana', 'orange'];
 
   addFruits(newFruit: string) {
-    this.fruits.push(newFruit);
+    this.fruits = [...this.fruits, newFruit];
   }
 }
