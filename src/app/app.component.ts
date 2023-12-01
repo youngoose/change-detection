@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -6,9 +7,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  fruits = ['apple', 'banana', 'orange'];
+  fruits = new BehaviorSubject(['apple', 'banana', 'orange']);
 
-  addFruits(newFruit: string) {
-    this.fruits.push(newFruit);
+  addFruits(newFruit) {
+    this.fruits.next(newFruit);
   }
 }
