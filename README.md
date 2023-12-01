@@ -28,3 +28,14 @@
 > Fix
 
 - pressing the Refresh button will run change detection on the component
+
+3. Add ChangeDetectorRef.markForCheck()
+
+> Issue
+
+- the new data from parent component mutates the data Observable on child component
+- problem is that angular does not run change detection
+
+> Solution
+
+- markForCheck instructs Angular that this particular input should trigger change detection when mutated

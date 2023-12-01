@@ -3,7 +3,9 @@ import {
   ChangeDetectorRef,
   Component,
   Input,
+  OnInit,
 } from '@angular/core';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-child',
@@ -11,12 +13,16 @@ import {
   styleUrls: ['./child.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class ChildComponent {
-  @Input() fruits: string[] = [];
+export class ChildComponent implements OnInit {
+  @Input() data: Observable<any>;
+  fruits: string[] = [];
 
   constructor(private cdRef: ChangeDetectorRef) {}
 
-  refresh() {
-    this.cdRef.detectChanges();
+  ngOnInit() {
+    this.data.subscribe((newFruit) => {
+      this.fruits = [...this.fruits, ...newFruit];
+      this.cdRef.markForCheck();
+    });
   }
 }
